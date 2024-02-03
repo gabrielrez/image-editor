@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Editor de Imagens</title>
+</head>
+
+<body>
+  <div class="container-grid">
+    <div class="options">
+      <button class="clean-btn">Limpar Filtros</button>
+      <div class="new-save">
+        <button class="new-btn">Nova Imagem</button>
+        <button class="save-btn">Salvar</button>
+      </div>
+    </div>
+    <div class="tools-sidebar">
+      <button id="filterDefault" class="active effect">Brilho</button>
+      <button class="effect">Contraste</button>
+      <button class="effect">Saturação</button>
+      <button class="effect">Cinza</button>
+      <button class="effect">Inverter</button>
+      <button onclick="handleDirection('rotateLeft')">Rotacionar Esquerda</button>
+      <button onclick="handleDirection('rotateRight')">Rotacionar Direita</button>
+      <button onclick="handleDirection('flipX')">Espelhar Horizontal</button>
+      <button onclick="handleDirection('flipY')">Espelhar Vertical</button>
+      <input type="range">
+    </div>
+    <div class="img-content">
+      <input type="file" accept="image/*" style="display: none;">
+      <img src="img/img-default.jpg" alt="">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

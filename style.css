@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+  font-weight: bold;
+  color: #F7F7F7;
+}
+
+body {
+  max-width: 732px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  background-color: #F7F7F7;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container-grid {
+  max-width: 732px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+}
+
+.options {
+  grid-row: 1;
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tools-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tools-sidebar input {
+  margin-top: 32px;
+}
+
+.tools-sidebar button {
+  padding: 8px 16px;
+  background-color: #F07EF2;
+}
+
+.img-content {
+  max-height: 500px;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.img-content img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.options button {
+  padding: 8px 24px;
+}
+
+button.active {
+  background-color: #d65bd8;
+  width: 95%;
+}
+
+.new-btn {
+  background-color: #A252F2;
+}
+
+.save-btn {
+  background-color: #05F283;
+}
+
+.clean-btn {
+  background-color: #F25260;
+}
