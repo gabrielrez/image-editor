@@ -60,10 +60,28 @@ function loadNewImage() {
   init();
 }
 
+function saveImage() {
+  const link = document.createElement("a");
+
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  canvas.width = img.width;
+  canvas.height = img.height;
+  ctx.filter = img.style.filter;
+  ctx.drawImage(img, 0, 0, img.width, img.height);
+  link.href = canvas.toDataURL("image/png");
+
+  // Define o nome do arquivo a ser baixado
+  link.download = "imagem_editada.png";
+
+  // Dispara o evento de clique no link
+  link.click();
+}
+
 cleanBtn.addEventListener("click", init);
 addBtn.addEventListener("click", function () {
   inputFile.click();
-})
+});
 
 inputFile.addEventListener("change", loadNewImage);
 
@@ -77,13 +95,16 @@ range.addEventListener("input", function () {
   grayscale(${filters["Cinza"].value}%)
   invert(${filters["Inverter"].value}%)
   `;
-})
+});
 
 effectBtns.forEach((item) => {
   item.addEventListener("click", function () {
     effectBtns.forEach((item) => {
       item.classList.remove("active");
-      this.classList.add("active");
-    })
-  })
-})
+    });
+    this.classList.add("active");
+    filterActive = this.getAttribute("data-type");
+  });
+});
+
+saveBtn.addEventListener("click", saveImage);
